@@ -95,7 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Mark previous lesson complete if it had no quiz
         if (previousLessonId) {
             const prevLesson = LESSONS.find(l => l.id === previousLessonId);
-            if (prevLesson && !prevLesson.quiz && prevLesson.id !== 'ear-training') {
+            const trainingLessons = ['ear-training', 'chord-training', 'scale-training', 'arpeggio-training'];
+            if (prevLesson && !prevLesson.quiz && !trainingLessons.includes(prevLesson.id)) {
                 markComplete(prevLesson.id);
             }
         }
@@ -119,10 +120,19 @@ document.addEventListener('DOMContentLoaded', () => {
             fretboardContainer.classList.add('hidden');
         }
 
-        // Quiz
+        // Quiz / Training
         if (lesson.id === 'ear-training') {
             quizContainer.classList.remove('hidden');
             Quiz.renderEarTraining(quizContainer);
+        } else if (lesson.id === 'chord-training') {
+            quizContainer.classList.remove('hidden');
+            Quiz.renderChordTraining(quizContainer);
+        } else if (lesson.id === 'scale-training') {
+            quizContainer.classList.remove('hidden');
+            Quiz.renderScaleTraining(quizContainer);
+        } else if (lesson.id === 'arpeggio-training') {
+            quizContainer.classList.remove('hidden');
+            Quiz.renderArpeggioTraining(quizContainer);
         } else if (lesson.quiz && lesson.quiz.length > 0) {
             quizContainer.classList.remove('hidden');
             Quiz.render(quizContainer, lesson.quiz, (score, total) => {

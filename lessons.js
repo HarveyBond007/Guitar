@@ -1235,9 +1235,174 @@ const LESSONS = [
         ]
     },
     {
+        id: 'chord-training',
+        title: 'Chord Training',
+        section: 'Practice Lab',
+        subtitle: 'Train your ears to identify chord types by sound',
+        content: () => `
+            <h2>Chord Training</h2>
+            <p class="subtitle">Train your ears to identify chord types by sound</p>
+
+            <p>One of the most powerful skills a guitarist can develop is the ability to <strong>hear</strong> what type of chord is being played. This exercise will train your ears to distinguish between major, minor, seventh, diminished, augmented, and suspended chords.</p>
+
+            <h3>What to Listen For</h3>
+            <div class="concept-box">
+                <h4>Chord Quality Cheat Sheet</h4>
+                <ul>
+                    <li><strong>Major</strong> — Bright, happy, resolved. The "default" chord sound.</li>
+                    <li><strong>Minor</strong> — Sad, dark, melancholy. One note lower than major.</li>
+                    <li><strong>Dominant 7th</strong> — Bluesy, tense, wants to move. Major + extra tension.</li>
+                    <li><strong>Major 7th</strong> — Dreamy, smooth, jazzy. Major + a sweet high note.</li>
+                    <li><strong>Minor 7th</strong> — Mellow, soulful, laid-back. Minor + warmth.</li>
+                    <li><strong>Diminished</strong> — Tense, spooky, unstable. Both intervals are small.</li>
+                    <li><strong>Augmented</strong> — Weird, unsettled, mysterious. Both intervals are large.</li>
+                    <li><strong>Sus2</strong> — Open, airy, ambiguous. Neither major nor minor.</li>
+                    <li><strong>Sus4</strong> — Suspended, tense, wants to resolve down. Neither major nor minor.</li>
+                    <li><strong>Power Chord</strong> — Hollow, strong, neutral. Just root and 5th.</li>
+                </ul>
+            </div>
+
+            <h3>Reference Sounds</h3>
+            <p>Get familiar with each type before starting the quiz:</p>
+            <div class="chord-grid">
+                <div class="chord-diagram"><span class="chord-name">Major</span><button class="play-btn" onclick="AudioEngine.playChord(['C3','E3','G3'], 1.5)">Play</button></div>
+                <div class="chord-diagram"><span class="chord-name">Minor</span><button class="play-btn" onclick="AudioEngine.playChord(['C3','D#3','G3'], 1.5)">Play</button></div>
+                <div class="chord-diagram"><span class="chord-name">Dom 7</span><button class="play-btn" onclick="AudioEngine.playChord(['C3','E3','G3','A#3'], 1.5)">Play</button></div>
+                <div class="chord-diagram"><span class="chord-name">Maj 7</span><button class="play-btn" onclick="AudioEngine.playChord(['C3','E3','G3','B3'], 1.5)">Play</button></div>
+                <div class="chord-diagram"><span class="chord-name">Min 7</span><button class="play-btn" onclick="AudioEngine.playChord(['C3','D#3','G3','A#3'], 1.5)">Play</button></div>
+                <div class="chord-diagram"><span class="chord-name">Dim</span><button class="play-btn" onclick="AudioEngine.playChord(['C3','D#3','F#3'], 1.5)">Play</button></div>
+                <div class="chord-diagram"><span class="chord-name">Aug</span><button class="play-btn" onclick="AudioEngine.playChord(['C3','E3','G#3'], 1.5)">Play</button></div>
+                <div class="chord-diagram"><span class="chord-name">Sus2</span><button class="play-btn" onclick="AudioEngine.playChord(['C3','D3','G3'], 1.5)">Play</button></div>
+                <div class="chord-diagram"><span class="chord-name">Sus4</span><button class="play-btn" onclick="AudioEngine.playChord(['C3','F3','G3'], 1.5)">Play</button></div>
+                <div class="chord-diagram"><span class="chord-name">Power</span><button class="play-btn" onclick="AudioEngine.playChord(['C3','G3'], 1.5)">Play</button></div>
+            </div>
+
+            <div class="concept-box tip-box">
+                <h4>Strategy</h4>
+                <p>Start by learning to distinguish the big categories: major vs minor vs suspended vs diminished. Then refine to distinguish triads from 7th chords. Don't try to get them all perfect right away — build up gradually!</p>
+            </div>
+
+            <p>Click "Play Chord" below and identify the chord type!</p>
+        `,
+        quiz: null
+    },
+    {
+        id: 'scale-training',
+        title: 'Scale Training',
+        section: 'Practice Lab',
+        subtitle: 'Identify scales by ear — hear the difference between modes and scale types',
+        content: () => `
+            <h2>Scale Training</h2>
+            <p class="subtitle">Identify scales by ear — hear the difference between modes and scale types</p>
+
+            <p>Every scale has a unique <strong>mood</strong> and <strong>color</strong>. In this exercise, you'll train your ears to tell them apart by listening to their ascending patterns.</p>
+
+            <h3>What Makes Each Scale Unique</h3>
+            <div class="concept-box">
+                <h4>Scale Character Guide</h4>
+                <ul>
+                    <li><strong>Major (Ionian)</strong> — Happy, bright, "do-re-mi." The standard sound.</li>
+                    <li><strong>Natural Minor (Aeolian)</strong> — Sad, dark. The classic minor sound.</li>
+                    <li><strong>Minor Pentatonic</strong> — Bluesy, simple, 5 notes. The rock solo scale.</li>
+                    <li><strong>Major Pentatonic</strong> — Sweet, country, folk. 5-note major scale.</li>
+                    <li><strong>Blues</strong> — Gritty, soulful. Pentatonic + the "blue note" crunch.</li>
+                    <li><strong>Dorian</strong> — Jazz-minor. Like minor but with a brighter 6th.</li>
+                    <li><strong>Mixolydian</strong> — Bluesy-major. Like major but with a flat 7th.</li>
+                    <li><strong>Phrygian</strong> — Spanish, exotic. That half-step at the start is the giveaway.</li>
+                </ul>
+            </div>
+
+            <h3>Reference Sounds</h3>
+            <p>Listen carefully to each scale before testing yourself:</p>
+            <p>
+                <button class="play-btn" onclick="AudioEngine.playSequence(['C3','D3','E3','F3','G3','A3','B3','C4'], 0.3, 0.4)">Major</button>
+                <button class="play-btn" onclick="AudioEngine.playSequence(['C3','D3','D#3','F3','G3','G#3','A#3','C4'], 0.3, 0.4)">Natural Minor</button>
+                <button class="play-btn" onclick="AudioEngine.playSequence(['C3','D#3','F3','G3','A#3','C4'], 0.3, 0.4)">Minor Pentatonic</button>
+                <button class="play-btn" onclick="AudioEngine.playSequence(['C3','D3','E3','G3','A3','C4'], 0.3, 0.4)">Major Pentatonic</button>
+                <button class="play-btn" onclick="AudioEngine.playSequence(['C3','D#3','F3','F#3','G3','A#3','C4'], 0.3, 0.4)">Blues</button>
+                <button class="play-btn" onclick="AudioEngine.playSequence(['C3','D3','D#3','F3','G3','A3','A#3','C4'], 0.3, 0.4)">Dorian</button>
+                <button class="play-btn" onclick="AudioEngine.playSequence(['C3','D3','E3','F3','G3','A3','A#3','C4'], 0.3, 0.4)">Mixolydian</button>
+                <button class="play-btn" onclick="AudioEngine.playSequence(['C3','C#3','D#3','F3','G3','G#3','A#3','C4'], 0.3, 0.4)">Phrygian</button>
+            </p>
+
+            <div class="concept-box tip-box">
+                <h4>Listening Tips</h4>
+                <ul>
+                    <li><strong>Count the notes</strong> — 5 notes = pentatonic, 6 = blues, 7 = full scale</li>
+                    <li><strong>Listen to the start</strong> — Does the 2nd note land close (half step) or far? Phrygian starts with a half step.</li>
+                    <li><strong>Major vs minor</strong> — The 3rd note is the giveaway. High 3rd = major family, low 3rd = minor family.</li>
+                    <li><strong>The blue note</strong> — That crunchy passing tone between the 4th and 5th? That's the blues scale.</li>
+                </ul>
+            </div>
+
+            <p>Click "Play Scale" below and identify which scale you hear!</p>
+        `,
+        fretboard: {
+            setup: (fb) => {
+                fb.highlightScale('C', [0, 2, 4, 5, 7, 9, 11]);
+            }
+        },
+        quiz: null
+    },
+    {
+        id: 'arpeggio-training',
+        title: 'Arpeggio Training',
+        section: 'Practice Lab',
+        subtitle: 'Identify arpeggios — chord tones played one at a time',
+        content: () => `
+            <h2>Arpeggio Training</h2>
+            <p class="subtitle">Identify arpeggios — chord tones played one at a time</p>
+
+            <p>An <strong>arpeggio</strong> is a chord played one note at a time instead of all together. Where a chord is a "strum," an arpeggio is a "pick." Training your ear to identify arpeggios helps you understand chord tones, improve your solos, and write better melodies.</p>
+
+            <h3>Why Arpeggios Matter for Guitar</h3>
+            <div class="concept-box">
+                <h4>Arpeggios vs Scales vs Chords</h4>
+                <ul>
+                    <li><strong>Chord</strong> — All notes at once (strumming)</li>
+                    <li><strong>Arpeggio</strong> — Chord notes one at a time (picking)</li>
+                    <li><strong>Scale</strong> — All available notes in order</li>
+                </ul>
+                <p>Arpeggios use <em>only</em> the chord tones, so they outline the harmony perfectly. Great soloists mix scales and arpeggios to create compelling melodies that follow the chord changes.</p>
+            </div>
+
+            <h3>Reference Arpeggios</h3>
+            <p>Listen to each arpeggio type to hear the differences:</p>
+            <p>
+                <button class="play-btn" onclick="AudioEngine.playSequence(['C3','E3','G3','C4'], 0.35, 0.5)">Major (1-3-5)</button>
+                <button class="play-btn" onclick="AudioEngine.playSequence(['C3','D#3','G3','C4'], 0.35, 0.5)">Minor (1-b3-5)</button>
+                <button class="play-btn" onclick="AudioEngine.playSequence(['C3','E3','G3','A#3','C4'], 0.35, 0.5)">Dom 7 (1-3-5-b7)</button>
+                <button class="play-btn" onclick="AudioEngine.playSequence(['C3','E3','G3','B3','C4'], 0.35, 0.5)">Maj 7 (1-3-5-7)</button>
+                <button class="play-btn" onclick="AudioEngine.playSequence(['C3','D#3','G3','A#3','C4'], 0.35, 0.5)">Min 7 (1-b3-5-b7)</button>
+                <button class="play-btn" onclick="AudioEngine.playSequence(['C3','D#3','F#3','C4'], 0.35, 0.5)">Dim (1-b3-b5)</button>
+                <button class="play-btn" onclick="AudioEngine.playSequence(['C3','E3','G#3','C4'], 0.35, 0.5)">Aug (1-3-#5)</button>
+                <button class="play-btn" onclick="AudioEngine.playSequence(['C3','D#3','G3','B3','C4'], 0.35, 0.5)">Min-Maj7 (1-b3-5-7)</button>
+            </p>
+
+            <div class="concept-box tip-box">
+                <h4>Listening Strategy</h4>
+                <ul>
+                    <li><strong>Major vs Minor</strong> — Is the 2nd note bright (major 3rd) or dark (minor 3rd)?</li>
+                    <li><strong>Triad vs 7th</strong> — Count the notes. 3 notes before the octave = triad, 4 = seventh chord.</li>
+                    <li><strong>Diminished</strong> — Everything sounds "small" and tense. Both intervals are minor 3rds.</li>
+                    <li><strong>Augmented</strong> — Sounds "stretched" or spacey. Both intervals are major 3rds.</li>
+                    <li><strong>Dom 7 vs Maj 7</strong> — The 7th: does it sound bluesy (dom7) or smooth/dreamy (maj7)?</li>
+                </ul>
+            </div>
+
+            <p>Click "Play Arpeggio" below and identify the arpeggio type!</p>
+        `,
+        fretboard: {
+            setup: (fb) => {
+                fb.highlightChord('C', [0, 4, 7]);
+            }
+        },
+        quiz: null
+    },
+    {
         id: 'ear-training',
-        title: 'Ear Training',
-        section: 'Beyond the Basics',
+        title: 'Interval Training',
+        section: 'Practice Lab',
         subtitle: 'Train your ears to recognize intervals by sound',
         content: () => `
             <h2>Ear Training</h2>
