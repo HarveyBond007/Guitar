@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar Theory Lab</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h1>Guitar Theory Lab</h1>
+            <p class="tagline">From zero to music theory hero</p>
+        </div>
+        <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+            <span id="progress-text">0% complete</span>
+        </div>
+        <ul id="lesson-list"></ul>
+    </nav>
+
+    <main id="content">
+        <div id="lesson-view"></div>
+        <div id="fretboard-container" class="hidden">
+            <div class="fretboard-controls">
+                <button id="clear-fretboard" class="btn btn-sm">Clear</button>
+                <label><input type="checkbox" id="show-all-notes"> Show all notes</label>
+                <select id="highlight-select">
+                    <option value="">Highlight...</option>
+                </select>
+            </div>
+            <div id="fretboard"></div>
+            <div id="fretboard-legend" class="hidden"></div>
+        </div>
+        <div id="quiz-container" class="hidden"></div>
+        <div class="lesson-nav">
+            <button id="prev-lesson" class="btn">Previous</button>
+            <button id="next-lesson" class="btn btn-primary">Next Lesson</button>
+        </div>
+    </main>
+
+    <div id="toast-container"></div>
+
+    <script src="audio.js"></script>
+    <script src="fretboard.js"></script>
+    <script src="lessons.js"></script>
+    <script src="quiz.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
