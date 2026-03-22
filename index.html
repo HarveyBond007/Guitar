@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<!-- Guitar Theory Learning App -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guitar Theory Lab</title>
+    <title>Guitar Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
     <nav id="sidebar">
-        <div class="sidebar-header">
-            <h1>Guitar Theory Lab</h1>
-            <p class="tagline">From zero to music theory hero</p>
-        </div>
+        <header class="sidebar-header">
+            <h1>Guitar Lab</h1>
+            <p class="tagline">Master the fretboard</p>
+        </header>
         <div id="progress-bar-container">
             <div id="progress-bar"></div>
             <span id="progress-text">0% complete</span>
@@ -21,23 +29,27 @@
     </nav>
 
     <main id="content">
-        <div id="lesson-view"></div>
-        <div id="fretboard-container" class="hidden">
+        <section id="lesson-view"></section>
+
+        <section id="fretboard-container" class="hidden">
             <div class="fretboard-controls">
                 <button id="clear-fretboard" class="btn btn-sm">Clear</button>
-                <label><input type="checkbox" id="show-all-notes"> Show all notes</label>
+                <label>
+                    <input type="checkbox" id="show-all-notes"> Show all notes
+                </label>
                 <select id="highlight-select">
                     <option value="">Highlight...</option>
                 </select>
             </div>
             <div id="fretboard"></div>
-            <div id="fretboard-legend" class="hidden"></div>
-        </div>
-        <div id="quiz-container" class="hidden"></div>
-        <div class="lesson-nav">
+        </section>
+
+        <section id="quiz-container" class="hidden"></section>
+
+        <nav class="lesson-nav">
             <button id="prev-lesson" class="btn">Previous</button>
             <button id="next-lesson" class="btn btn-primary">Next Lesson</button>
-        </div>
+        </nav>
     </main>
 
     <div id="toast-container"></div>
